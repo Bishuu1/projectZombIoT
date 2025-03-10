@@ -17,10 +17,7 @@ class ZombieCrisisUI:
             actual_floor = len(self.simulation.building.floors) - floor_idx - 1
             print(f"Floor {actual_floor}:")
             for room in floor.rooms:
-                status = "🧟" if room.has_zombies else "  "
-                sensor = "🔴" if room.sensor.is_alert() else "🟢"
-                print(f"  Room {room.room_number}: {status} Sensor: {sensor}")
-            print()
+                print(room)
 
     def configure_building(self):
         """Configura el edificio inicial"""

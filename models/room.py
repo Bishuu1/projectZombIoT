@@ -1,3 +1,4 @@
+import random
 from models.sensor import Sensor
 
 class Room:
@@ -6,7 +7,7 @@ class Room:
         self.room_number = room_number
         self.sensor = Sensor()
         self.has_zombies = False
-        self.is_locked = False
+        self.is_locked = True if random.random() < 0.50 else False
 
     def add_zombies(self):
         self.has_zombies = True
@@ -28,4 +29,5 @@ class Room:
     def __str__(self):
         status = "🧟" if self.has_zombies else "👌"
         sensor = "🔴" if self.sensor.is_alert() else "🟢"
-        return f"Room {self.room_number} - Status: {status} - Sensor: {sensor}"
+        lock = "🔒" if self.is_locked else "🔓"
+        return f"Room {self.room_number} - Status: {status} - Sensor: {sensor} - Lock: {lock}"

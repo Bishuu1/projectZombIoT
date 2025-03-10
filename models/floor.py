@@ -8,7 +8,7 @@ class Floor:
     def get_room(self, room_number):
         index = room_number - 1
         if 0 <= index <= len(self.rooms):
-            return self.rooms[room_number]
+            return self.rooms[index]
         return None
 
     def get_adjacent_rooms(self, room_number):
