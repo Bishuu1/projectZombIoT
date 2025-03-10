@@ -15,7 +15,7 @@ class Floor:
         """Retorna las habitaciones adyacentes en el mismo piso"""
         adjacent = []
         if room_number > 1:
-            adjacent.append(self.rooms[room_number - 1])
+            adjacent.append(self.get_room(room_number - 1))
         if room_number < len(self.rooms):
-            adjacent.append(self.rooms[room_number + 1])
+            adjacent.append(self.get_room(room_number + 1))
         return adjacent
